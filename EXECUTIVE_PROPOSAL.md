@@ -52,7 +52,8 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 
 ### OSS Collaboration
 
-No special Broadcom user or private access required.
+No special Broadcom user or private access required other than for user verification.
+
 Given the content and codebases are public OSS,
 updates will be done via standard OSS contribution process:
 
@@ -66,7 +67,7 @@ updates will be done via standard OSS contribution process:
 
 - Broadcom VMware Tanzu team will:
   - Review, then either accept or reject PR submissions
-  - Responsible for merging verfied updates to the upstream repositories
+  - Responsible for merging verified updates to the upstream repositories
   - Handling the associated publishing to Spring Academy staging and/or production systems.
 
 **Note**: **Nowhere in the flow does the external author have access to staging or production systems,
@@ -112,7 +113,7 @@ other than as a normal student user account for review/verification purposes.  I
 | **Realistic Estimate** | 105 hours | $10,500 |
 | **Not to Exceed Cap** | 120 hours | $12,000 |
 
-**Note:** Client pays only for actual hours worked. If work completes early, client saves accordingly.
+**Note:** Client pays only for actual hours worked. If work completes early, the client saves accordingly.
 
 ---
 
