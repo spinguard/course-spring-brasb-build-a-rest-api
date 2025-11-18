@@ -21,7 +21,8 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 - **Timeline:** up to 4 weeks at 30 hours/week
 - **Investment:** $8,000 - $12,000 (80-120 hours at $100/hour, T&E model with fixed scope and not-to-exceed billing model)
 - **Approach:** Incremental PR-based development with staging environment testing
-- **Risk Mitigation:** Comprehensive iterative testing and staging verification before production, 15hr buffer in estimation model
+- **Risk Mitigation:** Early profiling, comprehensive iterative testing and staging verification before production,
+  15hr buffer in estimation model
 
 ---
 
@@ -38,8 +39,8 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 
 ### Content & Code Updates
 
-- Update 9 workshop content files and 11 lesson files
-- Regenerate 9 workshop codebase start/stop commits with Spring Boot 4.0/Java 21
+- Update 9 workshop content files and 11 lesson files at [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+- Regenerate 9 workshop codebase start/stop commits with Spring Boot 4.0/Java 21 at [OSS codebase reposistory](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
 - Update all version references and documentation links
 - Migrate workshop content to Hugo format (Educates 3.4.0)
 
@@ -48,6 +49,28 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 - Update 9 workshop environment configurations for Java 21
 - Remove reconciler configurations (Educates 3.4.0) - work with Broadcom Education team to modernize deployment workflows
 - Test all workshop environments in staging
+
+### OSS Collaboration
+
+No special Broadcom user or private access required.
+Given the content and codebases are public OSS,
+updates will be done via standard OSS contribution process:
+
+- Author updates initiated externally from [OSS github user](https://github.com/billkable).
+
+- Author updates will be initiated from Github pull requests from [forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) of OSS
+  [content](https://github.com/spinguard/course-spring-brasb-build-a-rest-api) and
+  [codebase](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code) repositories.
+
+- PR's will be submitted as part of standard [Github Flow](https://docs.github.com/en/get-started/using-github/github-flow).
+
+- Broadcom VMware Tanzu team will:
+  - Review, then either accept or reject PR submissions
+  - Responsible for merging verfied updates to the upstream repositories
+  - Handling the associated publishing to Spring Academy staging and/or production systems.
+
+**Note**: **Nowhere in the flow does the external author have access to staging or production systems,
+other than as a normal student user account for review/verification purposes.  It is recommended that the above mentioned user is given Spring Academy user access to staging (production access is already established via bkable@spinguard.io account)**
 
 ### Testing & Validation
 
@@ -64,7 +87,7 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 
 | Week | Focus Area | Key Deliverables |
 |------|-----------|------------------|
-| **Week 1** | Environment Setup & Workflow Establishment | OSS PR setup, initial content updates, first module (Spring Initializr lab) complete, establish iterative authoring/update workflow, deploy to staging |
+| **Week 1** | Environment Setup, Profiling & Workflow Establishment | OSS PR setup, initial content updates, capacity impact forecast, first module (Spring Initializr lab) complete, establish iterative authoring/update workflow, deploy to staging |
 | **Week 2** | Module 2: First RESTful Endpoints | Content and lab updates for Module 2, iterative testing, VMware Tanzu Education team verification |
 | **Week 3** | Module 3: Secure App | Content and lab updates for Module 3, iterative testing, VMware Tanzu Education team verification |
 | **Week 4** | Module 4: CRUD Operations & Final Validation | Content and lab updates for Module 4, end-to-end verification, ready for production |
@@ -100,6 +123,7 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 - **Spring Security API Changes:** Detailed estimate created, early verification planned
 - **Environment Updates:** Early infrastructure coordination, 2 hours per workshop allocated
 - **Platform Migration:** Staging environment testing throughout project
+- **Increased Lab Resources**: Week one includes detailed profiling comparison of old/vs new versions
 
 ### Contingency Planning
 
@@ -149,13 +173,17 @@ This proposal outlines the upgrade of the "Building a REST API with Spring Boot"
 ### Required Before Start
 
 - Spring Boot 4.0 GA release (otherwise use latest 4.0-RC)
-- Spring Academy staging environment available
+- Spring Academy staging environment available for user verification
 - Infrastructure team coordination for environment updates
 
 ### Assumptions
 
--   No new content - upgrade existing only
--   No major breaking changes beyond those identified
--   30 hours/week availability
--   PR review process accommodates incremental merges -
-    will require VMware Tanzu Education team availability/coordination
+- No new content - upgrade existing only
+- No major breaking changes beyond those identified
+- 30 hours/week availability
+- PR review process accommodates incremental merges -
+  will require VMware Tanzu Education team availability/coordination
+- Access given to Spring Academy staging environment
+  for user verification purposes
+- Potential doubling of Educates footprint - assumed staging and production lab environments
+  have sufficient scaling and capacity to accommodate

@@ -29,6 +29,8 @@
 ### 1. Content Repository Updates (This Repo)
 **Estimated: 12 hours**
 
+**Repository:** [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+
 #### 1.1 Workshop Content Files (6 hours)
 - **Workshop 02 (Spring Initializr):** 1 hour
   - Update Spring Boot version (3.3.X → 4.0.X)
@@ -61,6 +63,10 @@
 
 ### 2. Code Repository Updates
 **Estimated: 45 hours**
+
+**Repository:** [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
+
+**Note:** Updates via OSS contribution process (forks, PRs, GitHub Flow)
 
 #### 2.1 Workshop Start/Stop Commits (36 hours)
 **9 workshops × 4 hours each = 36 hours**
@@ -161,7 +167,14 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
 ### 4. Testing & Validation
 **Estimated: 15 hours**
 
-#### 4.1 Build & Unit Testing (4 hours)
+#### 4.1 Profiling & Capacity Analysis (4 hours)
+- **Week 1 Task:** Detailed profiling comparison of old vs. new versions
+- **Resource Utilization:** Compare CPU, memory, disk usage
+- **Capacity Impact Forecast:** Analyze Educates environment footprint changes
+- **Documentation:** Document findings for infrastructure team
+- **Risk Assessment:** Assess potential doubling of Educates footprint
+
+#### 4.2 Build & Unit Testing (4 hours)
 - **Build Verification:** 1 hour
   - All projects build successfully
   - No deprecation warnings
@@ -172,7 +185,7 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
   - Verify test coverage maintained
   - Check for missing test scenarios
 
-#### 4.2 Runtime Verification (4 hours)
+#### 4.3 Runtime Verification (4 hours)
 - **Application Startup:** 1 hour
   - Verify all applications start
   - Check for startup errors
@@ -187,7 +200,7 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
   - Authorization checks
   - CSRF configuration
 
-#### 4.3 Integration Testing (7 hours)
+#### 4.4 Integration Testing (7 hours)
 - **Full Workshop Flow:** 5 hours
   - Complete each workshop from start to finish
   - Verify start → stop transitions
@@ -314,8 +327,10 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
 - [ ] Set up test environment with Spring Boot 4.0
 - [ ] Create upgrade checklist
 - [ ] Review Spring Security 7.0 changes (if applicable)
+- [ ] **Set up OSS forks and establish GitHub Flow process**
 
-### Phase 2: Content Repository Updates (12 hours)
+### Phase 2: Content Repository Updates & Week 1 Setup (12 hours)
+- [ ] **OSS PR setup and workflow establishment (2 hours)**
 - [ ] Update Workshop 02 content (Spring Boot/Java versions)
 - [ ] Review and update 8 remaining workshop content files
 - [ ] **Migrate workshop content to Hugo format (Educates 3.4.0)**
@@ -323,6 +338,10 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
 - [ ] Update documentation links
 - [ ] Review and update metadata files
 - [ ] Update workshop YAML files (JDK version)
+- [ ] **Profiling and capacity impact forecast (4 hours)**
+  - Detailed profiling comparison of old vs. new versions
+  - Capacity impact analysis
+  - Resource utilization comparison
 
 ### Phase 3: Lab Environment Resource Updates (20 hours)
 - [ ] Update Workshop 02 environment (2 hours)
@@ -361,6 +380,10 @@ Each workshop requires updates to `workshop.yaml` and related environment resour
 - [ ] Breaking changes review (5 hours)
 
 ### Phase 5: Testing & Validation (15 hours)
+- [ ] **Profiling and capacity analysis (4 hours) - Week 1**
+  - Detailed profiling comparison of old vs. new versions
+  - Capacity impact forecast
+  - Resource utilization comparison
 - [ ] Build verification (1 hour)
 - [ ] Unit test execution (2 hours)
 - [ ] Runtime verification (4 hours)
@@ -391,6 +414,7 @@ Content Updates:             12 hours (11%)
 Code Repository:             45 hours (43%)
 Lab Environment Resources:   20 hours (19%)
 Testing & Validation:        15 hours (14%)
+  - Includes 4 hours profiling (Week 1)
 Documentation:               5 hours (5%)
 Buffer/Contingency:          5 hours (5%)
 Optional Enhancements:       3 hours (3%)
@@ -437,6 +461,9 @@ Total:                      105 hours (100%)
 7. **Screenshots** can be regenerated if needed
 8. **Educates 3.4.0** is available and Hugo migration is straightforward
 9. **Educates authoring flow** documentation is available
+10. **OSS contribution process** (forks, PRs, GitHub Flow) is acceptable workflow
+11. **Access given to Spring Academy staging environment** for user verification purposes
+12. **Potential doubling of Educates footprint** - assumed staging and production lab environments have sufficient scaling and capacity to accommodate
 
 ---
 
@@ -457,7 +484,17 @@ Total:                      105 hours (100%)
      - Test environment startup early in process
      - Allow 2 hours per workshop + 2 hours contingency (20 hours total)
 
-3. **Spring Initializr UI Changes**
+3. **Increased Lab Resources** ⚠️ **NEW RISK AREA**
+   - **Risk:** Potential doubling of Educates footprint may require additional capacity
+   - **Risk:** Staging and production environments may not have sufficient scaling
+   - **Mitigation:**
+     - **Week 1 includes detailed profiling comparison of old vs. new versions**
+     - Capacity impact forecast created early in project
+     - Resource utilization analysis provided to infrastructure team
+     - Early identification of capacity requirements
+   - **Contingency:** +3 hours if capacity analysis reveals significant infrastructure changes needed
+
+4. **Spring Initializr UI Changes**
    - **Risk:** Screenshots may be outdated
    - **Mitigation:** Regenerate screenshots after Spring Boot 4.0 GA
 
@@ -505,13 +542,16 @@ Total:                      105 hours (100%)
 
 1. **Start Early:** Begin with Workshop 02 to establish baseline
 2. **Coordinate Environment Early:** ⚠️ **NEW** - Check with infrastructure team about Java 21 environment images **before** starting workshop updates
-3. **Test Incrementally:** Test each workshop as it's updated (both code and environment)
-4. **Parallelize When Possible:** Environment updates can be done in parallel with content updates
-5. **Monitor Releases:** Watch for Spring Boot 4.0 GA and Spring Security updates
-6. **Document Changes:** Keep notes of any issues encountered, especially environment-related
-7. **Peer Review:** Have another developer review security configurations
-8. **Student Testing:** Have a test student complete the course before release, including environment testing
-9. **Environment Validation:** Test each workshop environment startup after updates
+3. **Early Profiling:** ⚠️ **NEW** - Complete profiling and capacity analysis in Week 1 to identify resource requirements early
+4. **OSS Process:** Establish GitHub Flow and fork repositories early in Week 1
+5. **Test Incrementally:** Test each workshop as it's updated (both code and environment)
+6. **Parallelize When Possible:** Environment updates can be done in parallel with content updates
+7. **Monitor Releases:** Watch for Spring Boot 4.0 GA and Spring Security updates
+8. **Document Changes:** Keep notes of any issues encountered, especially environment-related
+9. **Peer Review:** Have another developer review security configurations
+10. **Student Testing:** Have a test student complete the course before release, including environment testing
+11. **Environment Validation:** Test each workshop environment startup after updates
+12. **Capacity Planning:** Share profiling results with infrastructure team early for capacity planning
 
 ---
 

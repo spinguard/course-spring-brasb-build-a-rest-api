@@ -12,6 +12,9 @@ Upgrading from Spring Boot 3.1/Java 17 to Spring Boot 4.0/Java 21 (or 25).
 ---
 
 ## 1. Content Repository Updates (This Repo)
+**Repository:** [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+
+**Note:** Updates will be made via OSS contribution process (forks, PRs, GitHub Flow). See Section 2A for details.
 
 ### 1.1 Workshop Content Files
 - [ ] **workshops/02-spring-initializr/workshop/content/01-spring-initializr.md**
@@ -31,9 +34,12 @@ Upgrading from Spring Boot 3.1/Java 17 to Spring Boot 4.0/Java 21 (or 25).
 ---
 
 ## 2. Code Repository Updates
-**Repository:** https://github.com/spring-academy/course-spring-brasb-build-a-rest-api-code
+**Repository:** [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
+
+**Note:** Updates will be made via OSS contribution process (forks, PRs, GitHub Flow). See Section 2A for details.
 
 ### 2.1 Project Bootstrap (Workshop 02)
+- [ ] **OSS Setup:** Fork codebase repository, establish GitHub Flow process
 - [ ] **Start Commit:** Regenerate project using Spring Initializr with:
   - Spring Boot 4.0.X
   - Java 21 (or 25)
@@ -41,6 +47,7 @@ Upgrading from Spring Boot 3.1/Java 17 to Spring Boot 4.0/Java 21 (or 25).
   - Spring Web dependency
 - [ ] **Stop Commit:** Verify generated project structure matches expectations
 - [ ] Update `build.gradle` if any dependency management changes are needed
+- [ ] **Profiling:** Compare resource utilization (old vs. new versions)
 
 ### 2.2 Dependencies Updates
 - [ ] **workshops/06-spring-data:** Verify Spring Data JDBC compatibility with Spring Boot 4.0
@@ -96,6 +103,27 @@ Upgrading from Spring Boot 3.1/Java 17 to Spring Boot 4.0/Java 21 (or 25).
 
 ---
 
+## 2A. OSS Collaboration Process
+
+### 2A.1 Repository Setup
+- [ ] Fork [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+- [ ] Fork [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
+- [ ] Establish GitHub Flow process
+- [ ] Create initial topic branches
+
+### 2A.2 Contribution Process
+- [ ] All updates via GitHub Pull Requests from forks
+- [ ] Follow standard [Github Flow](https://docs.github.com/en/get-started/using-github/github-flow)
+- [ ] Broadcom VMware Tanzu team reviews and merges PRs
+- [ ] Broadcom team handles publishing to staging/production
+
+### 2A.3 Access & Verification
+- [ ] Request Spring Academy staging environment access (for verification)
+- [ ] Note: No direct access to staging/production systems (except as student user)
+- [ ] Production access already established via bkable@spinguard.io account
+
+---
+
 ## 3. Workshop Start/Stop Commits
 
 Each workshop has start and stop commits that need to be regenerated:
@@ -135,12 +163,20 @@ Each workshop has start and stop commits that need to be regenerated:
 
 ## 5. Testing & Validation
 
-### 5.1 Build Verification
+### 5.1 Profiling & Capacity Analysis
+- [ ] **Week 1 Task:** Detailed profiling comparison of old vs. new versions
+- [ ] Compare resource utilization (CPU, memory, disk)
+- [ ] Analyze Educates environment footprint changes
+- [ ] Create capacity impact forecast
+- [ ] Document findings for infrastructure team
+- [ ] Assess potential doubling of Educates footprint
+
+### 5.2 Build Verification
 - [ ] All projects build successfully with `./gradlew build`
 - [ ] All tests pass: `./gradlew test`
 - [ ] No deprecation warnings in build output
 
-### 5.2 Runtime Verification
+### 5.3 Runtime Verification
 - [ ] Application starts successfully
 - [ ] All REST endpoints work correctly:
   - GET /cashcards/{id}
@@ -153,7 +189,7 @@ Each workshop has start and stop commits that need to be regenerated:
   - Authorization checks
   - CSRF protection
 
-### 5.3 Integration Testing
+### 5.4 Integration Testing
 - [ ] Run full workshop flow from start to finish
 - [ ] Verify each workshop's start → stop transition works
 - [ ] Test that students can follow instructions and get expected results
@@ -274,6 +310,9 @@ Based on release notes, pay special attention to:
 - **Backward Compatibility:** Spring Boot 4.0 may have breaking changes - test thoroughly.
 - **Student Experience:** Ensure upgrade doesn't make course more complex for beginners.
 - **Workshop Images:** May need to regenerate screenshots if UI changes in Spring Initializr.
+- **OSS Contribution:** All updates via standard OSS process (forks, PRs, GitHub Flow)
+- **Capacity Planning:** Week 1 profiling will identify capacity requirements for Educates environments
+- **Access:** External author has no direct staging/production access (except as student user for verification)
 
 ---
 
@@ -288,6 +327,8 @@ Based on release notes, pay special attention to:
 
 ## Checklist Summary
 
+- [ ] **OSS forks and GitHub Flow process established**
+- [ ] **Profiling and capacity impact forecast complete (Week 1)**
 - [ ] Content files updated (versions, examples)
 - [ ] **Workshop content migrated to Hugo format (Educates 3.4.0)**
 - [ ] **Reconciler configurations removed from all workshop.yaml files**

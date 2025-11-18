@@ -7,7 +7,8 @@
 **Effort:** 105 hours (Realistic Estimate)
 **Not to Exceed:** 120 hours ($12,000)
 **Hourly Rate:** $100/hour
-**Timeline:** ~3.5 weeks at 30 hours/week
+**Timeline:** Up to 4 weeks at 30 hours/week
+**Billing Model:** Time and materials (T&E) with fixed scope and not-to-exceed billing model
 
 ---
 
@@ -27,9 +28,10 @@ Upgrade the "Building a REST API with Spring Boot" course from:
 - Update documentation and remove deprecated patterns
 
 ### 1.3 Deliverables
-- Updated content repository (this repo)
-- Updated code repository (9 workshops with start/stop commits)
+- Updated content repository: [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+- Updated code repository: [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code) (9 workshops with start/stop commits)
 - Updated workshop environment configurations (9 workshop.yaml files)
+- Capacity impact forecast and profiling comparison (old vs. new versions)
 - All tests passing
 - Complete course walkthrough verified
 - Documentation updated
@@ -109,12 +111,13 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 **Estimated: 12 hours**
 
 **Scope:**
-- Update workshop content files (9 workshops)
+- Update workshop content files (9 workshops) at [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
 - Update lesson content files (11 lessons)
 - Update documentation links
 - Review and update metadata files (lesson.json, workshop.yaml basic review)
 
 **Key Tasks:**
+- Set up OSS fork and establish GitHub Flow process
 - Update Spring Boot version references (3.3.X → 4.0.X)
 - Update Java version references (17 → 21/25)
 - **Migrate workshop content to Hugo format (Educates 3.4.0)**
@@ -127,17 +130,44 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 - All version references corrected
 - Documentation links current
 
+**Note:** Updates will be made via OSS contribution process (see Section 1B for details).
+
+---
+
+### 1B. OSS Collaboration Process
+
+**No special Broadcom user or private access required.** Given the content and codebases are public OSS, updates will be done via standard OSS contribution process:
+
+**Process:**
+- Author updates initiated externally from [OSS github user](https://github.com/billkable)
+- Author updates will be initiated from GitHub pull requests from [forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) of OSS:
+  - [Content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+  - [Codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
+- PRs will be submitted as part of standard [Github Flow](https://docs.github.com/en/get-started/using-github/github-flow)
+
+**Broadcom VMware Tanzu Team Responsibilities:**
+- Review, then either accept or reject PR submissions
+- Responsible for merging verified updates to the upstream repositories
+- Handling the associated publishing to Spring Academy staging and/or production systems
+
+**Access Limitations:**
+- External author does NOT have access to staging or production systems
+- Access is limited to normal student user account for review/verification purposes
+- **Recommendation:** Author should be given Spring Academy user access to staging (production access is already established via bkable@spinguard.io account)
+
 ---
 
 ### 2.2 Code Repository Updates
 **Estimated: 45 hours**
 
 **Scope:**
-- Regenerate 9 workshop start commits with Spring Boot 4.0/Java 21
+- Regenerate 9 workshop start commits with Spring Boot 4.0/Java 21 at [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
 - Regenerate 9 workshop stop commits
 - Verify dependency compatibility
 - Address breaking changes
 - Update test code if needed
+
+**Note:** Updates via OSS contribution process (forks, PRs, GitHub Flow)
 
 **Key Tasks:**
 - Workshop 02: Bootstrap (3 hours)
@@ -195,8 +225,13 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 - Runtime verification
 - Integration testing
 - End-to-end course walkthrough
+- **Early profiling and capacity impact analysis**
 
 **Key Tasks:**
+- **Week 1: Detailed profiling comparison of old vs. new versions (4 hours)**
+  - Capacity impact forecast
+  - Resource utilization comparison
+  - Document findings for infrastructure team
 - Verify all projects build successfully
 - Run all tests for all workshops
 - Test all REST endpoints
@@ -294,59 +329,84 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 ### 3.1 Schedule Assumptions
 - **Hours per week:** 30 hours
 - **Total hours:** 105 hours (realistic estimate)
-- **Timeline:** ~3.5 weeks
+- **Timeline:** Up to 4 weeks
+- **Billing Model:** Time and materials (T&E) with fixed scope and not-to-exceed billing model
 
 ### 3.2 Phased Approach
 
 **Week 1 (30 hours):**
-- Content repository updates (12 hours)
+- OSS PR setup and workflow establishment (2 hours)
+  - Set up forks of content and codebase repositories
+  - Establish GitHub Flow process
+  - Create initial topic branches
+- Content repository updates (10 hours)
   - Create topic branch and PRs
   - **Begin Hugo content migration (Educates 3.4.0)**
-  - Merge to staging, test content rendering
-- Begin lab environment resource updates (10 hours)
+  - Initial content updates
+- **Profiling and capacity impact forecast (4 hours)**
+  - **Detailed profiling comparison of old vs. new versions**
+  - **Capacity impact analysis for Educates environments**
+  - **Resource utilization comparison**
+  - **Document findings for infrastructure team**
+- Begin lab environment resource updates (8 hours)
   - Create topic branch and PRs
   - **Begin reconciler configuration removal**
   - Test in staging environment
-- Begin code repository - Workshop 02 & 04 (7 hours)
-  - Create topic branches and PRs
-  - Merge to staging, verify in staging course
-- Buffer/coordination (1 hour)
+- Begin code repository - Workshop 02 (Spring Initializr lab) (4 hours)
+  - Create topic branch and PR
+  - Complete first module
+  - Establish iterative authoring/update workflow
+- Deploy to staging and establish workflow (2 hours)
+  - Deploy first module to staging
+  - Verify iterative workflow
+  - Test content rendering
 
 **Week 2 (30 hours):**
 - Complete lab environment resource updates (10 hours)
   - Complete PRs, merge to staging
   - Verify all environments in staging
-- Code repository - Workshops 05-08 (18 hours)
+- Code repository - Module 2: Workshops 04-06 (18 hours)
   - Create topic branches and PRs
+  - Sequential module updates
   - Merge to staging incrementally
   - Verify each workshop in staging course
+  - VMware Tanzu Education team verification
 - Initial testing in staging (2 hours)
 
 **Week 3 (30 hours):**
-- Code repository - Workshops 09-11 (13 hours)
+- Code repository - Module 3: Workshops 07-09 (13 hours)
   - Create topic branches and PRs
+  - Sequential module updates
   - Merge to staging incrementally
   - Verify each workshop in staging course
+  - VMware Tanzu Education team verification
 - Testing & validation in staging (15 hours)
   - Incremental testing as PRs merge
   - **Test Educates authoring flow (separate task)**
   - **Verify Hugo content rendering**
-  - Full course walkthrough in staging
+  - Module 3 full walkthrough in staging
 - Documentation review (2 hours)
   - **Document Educates authoring flow changes**
 
 **Week 4 (15 hours):**
-- Final testing & validation in staging (10 hours)
+- Code repository - Module 4: Workshops 10-11 (5 hours)
+  - Create topic branches and PRs
+  - Sequential module updates
+  - Merge to staging incrementally
+  - Verify each workshop in staging course
+  - VMware Tanzu Education team verification
+- Final testing & validation in staging (8 hours)
   - Complete end-to-end verification
   - Content rendering final check
   - Lab environment final verification
-- Documentation final review (3 hours)
+  - Full course walkthrough
+- Documentation final review (2 hours)
 - Project completion & handoff (2 hours)
   - All PRs merged to staging
   - Staging verification complete
   - Ready for production
 
-**Total: 3.5 weeks at 30 hours/week**
+**Total: Up to 4 weeks at 30 hours/week**
 
 ---
 
@@ -381,6 +441,21 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 - Allow 2 hours per workshop + 2 hours contingency (20 hours total)
 
 **Contingency:** +5 hours if infrastructure coordination is complex
+
+---
+
+#### Risk 2A: Increased Lab Resources
+**Risk Level:** Medium
+**Impact:** Potential doubling of Educates footprint may require additional capacity
+**Probability:** Medium
+
+**Mitigation:**
+- **Week 1 includes detailed profiling comparison of old vs. new versions**
+- Capacity impact forecast created early in project
+- Resource utilization analysis provided to infrastructure team
+- Early identification of capacity requirements
+
+**Contingency:** +3 hours if capacity analysis reveals significant infrastructure changes needed
 
 ---
 
@@ -506,6 +581,9 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 13. **Content rendering system in staging matches production**
 14. **Educates 3.4.0 is available and Hugo migration is straightforward**
 15. **Educates authoring flow documentation is available**
+16. **Access given to Spring Academy staging environment for user verification purposes**
+17. **Potential doubling of Educates footprint - assumed staging and production lab environments have sufficient scaling and capacity to accommodate**
+18. **OSS contribution process (forks, PRs, GitHub Flow) is acceptable workflow**
 
 ---
 
@@ -552,18 +630,23 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 
 ### 9.2 Key Milestones
 - **Week 1 End:**
-  - Content updates complete (PRs merged to staging)
-  - Environments started (PRs submitted)
+  - OSS PR setup and workflow established
+  - Profiling and capacity impact forecast complete
+  - First module (Spring Initializr lab) complete
+  - Iterative authoring/update workflow established
   - Initial staging course created and tested
 - **Week 2 End:**
+  - Module 2 (First RESTful Endpoints) complete
   - Environments complete (PRs merged to staging)
-  - 4 workshops regenerated (PRs merged to staging)
+  - VMware Tanzu Education team verification of Module 2
   - Staging verification in progress
 - **Week 3 End:**
-  - All workshops regenerated (PRs merged to staging)
+  - Module 3 (Secure App) complete
+  - VMware Tanzu Education team verification of Module 3
   - Testing in progress in staging
   - Content rendering verified
 - **Week 4 End:**
+  - Module 4 (CRUD Operations) complete
   - Project complete
   - All PRs merged to staging
   - Full course verified in staging
@@ -576,15 +659,32 @@ This rate reflects the maintenance/upgrade nature of the work (as opposed to new
 ### 10.1 Version Control & Pull Request Process
 **PRs and topic branches will be used in a coordinated OSS (Open Source Software) change process for the upgrade.**
 
-**Process:**
+**OSS Contribution Process:**
+- **No special Broadcom user or private access required**
+- Author updates initiated externally from [OSS github user](https://github.com/billkable)
+- Updates via GitHub Pull Requests from [forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) of:
+  - [OSS content repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api)
+  - [OSS codebase repository](https://github.com/spinguard/course-spring-brasb-build-a-rest-api-code)
+- PRs submitted as part of standard [Github Flow](https://docs.github.com/en/get-started/using-github/github-flow)
 - Create topic branches for each major work category or workshop
 - Submit Pull Requests (PRs) for review and incremental verification
 - PRs and associated merges will be done on the **Broadcom Spring Academy staging environment**
 - Incremental verification and testing rather than waiting until end of effort
-- Each PR should be:
-  - Focused on a specific area (e.g., one workshop, content updates, environment updates)
-  - Tested and verified before merge
-  - Reviewed for quality and completeness
+
+**Broadcom VMware Tanzu Team Responsibilities:**
+- Review, then either accept or reject PR submissions
+- Responsible for merging verified updates to the upstream repositories
+- Handling the associated publishing to Spring Academy staging and/or production systems
+
+**Access Limitations:**
+- External author does NOT have access to staging or production systems
+- Access limited to normal student user account for review/verification purposes
+- **Recommendation:** Author should be given Spring Academy user access to staging (production access already established via bkable@spinguard.io account)
+
+**Each PR should be:**
+- Focused on a specific area (e.g., one workshop, content updates, environment updates)
+- Tested and verified before merge
+- Reviewed for quality and completeness
 
 **Benefits:**
 - Early detection of issues
